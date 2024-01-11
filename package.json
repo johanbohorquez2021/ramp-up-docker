@@ -1,18 +1,6 @@
 {
-  "name": "cron-ticker",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest",
-    "start": "node app.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "node-cron": "^3.0.3"
-  },
-  "devDependencies": {
-    "jest": "^29.7.0"
-  }
+    "scripts": {
+      "docker-build": "docker-build -t johanbohorquez2021/cron-ticker_ramp-up_devops:2.0.7 .",
+      "docker-run": "docker run -p 8080:80 johanbohorquez2021/cron-ticker_ramp-up_devops:2.0.7"
+    }
 }

@@ -1,29 +1,18 @@
-# /app /usr /lib
-FROM node:19.2-alpine3.16
+# Imagen de NGINX como servidor web
+FROM nginx:alpine
 
-# cd app
-WORKDIR /app
+# Eliminar la configuracion de NGINX
+RUN rm -rf /usr/share/nginx/html/*
 
-# Dest /app
-COPY package.json ./
+# Copiar archivos de HTML y Javascript al directorio de NGINX
+COPY index.html /usr/share/nginx/html
+COPY hola-mundo.js /usr/share/nginx/html
 
-# Instalar dependencias
-RUN npm install
-
-# Dest /app
-COPY . .
-
-# Realizar testing
-RUN npm run test 
-
-# Eliminar archivos y directorias no necesarios en PROD
-RUN rm -rf test && rm -rf node_modules
-
-# Instalar unicamente dependencias de PROD
-RUN npm install --prod 
+# Expone el puerto 80 para acceder al servidor web
+EXPOSE 80
 
 # Comando run de la imagen
-CMD [ "node", "app.js" ]
+# CMD [ "node", "hola-mundo.js" ]
 
 
 
