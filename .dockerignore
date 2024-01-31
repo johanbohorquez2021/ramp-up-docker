@@ -1,9 +1,3 @@
-
-
-node_modules/
-
-Dockerfile
-
-.git
-.dockerignore
-.gitignore
+node_modules
+build
+*.log

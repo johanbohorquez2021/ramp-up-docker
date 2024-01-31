@@ -1,14 +1,18 @@
 version: '3'
+
 services:
-  node-app:
+  backend:
     build:
-      context: .
+      context: ./backend
       dockerfile: Dockerfile
     ports:
-      - "8080:80"
-    depends_on:
-      - mongo-db
-  mongo-db:
-    image: mongo:latest
+      - "3001:3001"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     ports:
-      - "27017:27017"
+      - "3000:3000"
+    depends_on:
+      - backend

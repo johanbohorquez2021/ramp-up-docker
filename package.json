@@ -1,6 +1,0 @@
-{
-    "scripts": {
-      "docker-build": "docker-build -t johanbohorquez2021/cron-ticker_ramp-up_devops:2.0.7 .",
-      "docker-run": "docker run -p 8080:80 johanbohorquez2021/cron-ticker_ramp-up_devops:2.0.7"
-    }
-}
